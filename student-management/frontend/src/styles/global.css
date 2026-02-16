@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+
+* {
+  font-family: "SN Pro", sans-serif;
+}
+
+:root {
+  --bg: #f3f6fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --border: #e5e7eb;
+  --radius: 14px;
+  --transition: all 0.25s ease;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    Roboto,
+    "Segoe UI",
+    Arial;
+  background: var(--bg);
+  margin: 0;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Top Navigation */
+.app-shell .topbar {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 18px 28px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+}
+
+/* Layout Container */
+.container {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 24px;
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  padding: 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.06);
+}
+
+.form-card {
+  min-height: 260px;
+}
+
+.table-card {
+  min-height: 420px;
+}
+
+/* Form */
+.student-form label {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.student-form input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  margin-top: 6px;
+  font-size: 14px;
+  transition: var(--transition);
+  background: #fafafa;
+}
+
+.student-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Buttons */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+}
+
+.btn.primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn.danger {
+  background: var(--danger);
+  color: #ffffff;
+  border: none;
+}
+
+.btn.danger:hover {
+  background: var(--danger-hover);
+}
+
+/* Table */
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.student-table th {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  padding: 14px 10px;
+  border-bottom: 2px solid var(--border);
+}
+
+.student-table td {
+  padding: 14px 10px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+}
+
+.student-table tbody tr {
+  transition: var(--transition);
+}
+
+.student-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* Table actions & alignment improvements */
+.student-table td.actions {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.student-table .actions-inner {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.btn.small {
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+/* Column alignment: name left, phone/age center, actions right */
+.student-table th:nth-child(1),
+.student-table td:nth-child(1) {
+  text-align: left;
+}
+.student-table th:nth-child(2),
+.student-table td:nth-child(2),
+.student-table th:nth-child(3),
+.student-table td:nth-child(3) {
+  text-align: center;
+}
+.student-table th:last-child,
+.student-table td:last-child {
+  text-align: right;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .student-table th,
+  .student-table td {
+    padding: 10px 6px;
+    font-size: 13px;
+  }
+}
